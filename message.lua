@@ -1,3 +1,4 @@
+function serverHop()
 local Http = game:GetService("HttpService")
 local Teleport = game:GetService("TeleportService")
 local Player = game:GetService("Players").LocalPlayer
@@ -9,4 +10,6 @@ table.sort(data, function(a,b) return a.playing < b.playing end)
 for _,server in ipairs(data) do
     Teleport:TeleportToPlaceInstance(placeId, server.id, Player)
     task.wait(1)
+end
+
 end
